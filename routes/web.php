@@ -15,7 +15,15 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+// API ROUTE
 $router->group(['prefix' => 'api/v1/'], function () use ($router) {
-    $router->get('participant', 'ParticipantCtrl@all');
-    $router->get('participant/save', 'ParticipantCtrl@save');
+
+    $router->post('participant/save', 'ParticipantCtrl@save');
+    $router->post('user/login', 'UserCtrl@login');
+
+    // AUTH
+    $router->group(['middleware' => 'auth'], function () use ($router) {
+        $router->get('participant', 'ParticipantCtrl@all');
+        $router->get('user/logout', 'UserCtrl@logout');
+    });
 });
