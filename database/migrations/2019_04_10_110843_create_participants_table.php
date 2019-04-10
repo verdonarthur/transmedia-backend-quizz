@@ -22,8 +22,8 @@ class CreateParticipantsTable extends Migration
             $table->string('npa');
             $table->string('email');
             $table->boolean('canSendNewsletter');
-            $table->boolean('isAllAnswerCorrect');
-            $table->integer('nbrCorrectAnswer');
+            $table->boolean('isAllAnswerCorrect')->nullable();
+            $table->integer('nbrCorrectAnswer')->nullable();
             $table->string('hashAnswers');
             $table->timestamps();
 
