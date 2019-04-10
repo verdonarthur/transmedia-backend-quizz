@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 // API ROUTE
 $router->group(['prefix' => 'api/v1/'], function () use ($router) {
 
-    $router->post('participant/save', 'ParticipantCtrl@save');
+    $router->post('participant', 'ParticipantCtrl@save');
     $router->post('user/login', 'UserCtrl@login');
 
     // AUTH

@@ -30,6 +30,7 @@ class Authenticate
 
     /**
      * Handle an incoming request.
+     * see : https://medium.com/tech-tajawal/jwt-authentication-for-lumen-5-6-2376fd38d454
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next

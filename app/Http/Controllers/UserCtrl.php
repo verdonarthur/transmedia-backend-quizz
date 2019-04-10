@@ -8,6 +8,10 @@ use App\User;
 use \Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+
+/**
+ * Inspired from https://medium.com/tech-tajawal/jwt-authentication-for-lumen-5-6-2376fd38d454
+ */
 class UserCtrl extends BaseController
 {
     /**
@@ -37,7 +41,7 @@ class UserCtrl extends BaseController
     protected function jwt(User $user)
     {
         $payload = [
-            'iss' => "lumen-jwt", // Issuer of the token
+            'iss' => "transmedia-backend-quizz", // Issuer of the token
             'sub' => $user->id, // Subject of the token
             'iat' => time(), // Time when JWT was issued. 
             'exp' => time() + 60 * 60 // Expiration time
@@ -46,6 +50,10 @@ class UserCtrl extends BaseController
         return JWT::encode($payload, env('JWT_SECRET'));
     }
 
+    /**
+     * Log user
+     * @return response
+     */
     public function login()
     {
         $this->validate($this->request, [
