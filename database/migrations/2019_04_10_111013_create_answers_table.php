@@ -17,9 +17,9 @@ class CreateAnswersTable extends Migration
             $table->bigIncrements('id')->unique();
             $table->integer('idQuestion')->unique();
             $table->string('hashAnswer');
-            $table->integer('idParticipant');
-            $table->foreign('idParticipant')->references('id')->on('participants');
             $table->timestamps();
+            $table->integer('idParticipant');
+            //$table->foreign('idParticipant')->references('id')->on('participants');
         });
     }
 
