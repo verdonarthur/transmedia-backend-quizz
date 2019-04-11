@@ -4,3 +4,8 @@ Homestead.json
 Homestead.yaml
 .env
 /database/database.sqlite
+/public/js/
+/public/css/
+/public/client.html
+/public/img/
+/public/favicon.ico

@@ -24,6 +24,6 @@ class ParticipantsTableSeeder extends Seeder
             'hashAnswers' => 'lsfjrdjghreudgnoerngeirure'
         ]);
 
-        $testParticipant1->save();
+        //$testParticipant1->save();
     }
 }

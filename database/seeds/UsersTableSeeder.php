@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $admin = new User();
-        $admin->login = "admin";
+        $admin->login = "birdlife_admin";
         $admin->password = password_hash('admin', PASSWORD_BCRYPT);
         $admin->save();
     }

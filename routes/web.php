@@ -11,9 +11,10 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+//$router->get('/', function () use ($router) {
+//    return Illuminate\Support\Facades\File::get(__DIR__.'/../public/client.html');
+//    
+//});
 
 // API ROUTE
 $router->group(['prefix' => 'api/v1/'], function () use ($router) {
