@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Laravel\Lumen\Routing\Controller as BaseController;
 use App\Participant;
 use \Illuminate\Http\Request;
+use PHPUnit\Runner\Exception;
 
 class ParticipantCtrl extends BaseController
 {
@@ -30,13 +31,28 @@ class ParticipantCtrl extends BaseController
      */
     public function save()
     {
-        // validate participant
-        if (!$error = Participant::validate($this->request)) {
+
+        $validator = Participant::validate($this->request->all());
+        if ($validator->fails()) {
             return response()->json(
-                ['error' => $error],
-                401
+                $validator->errors(),
+                400
             );
         }
+
+        try {
+            $participant = Participant::saveOne($this->request->all());
+
+            return response()->json($participant, 200);
+        } catch (Exception $e) {
+            return response()->json(
+                $e,
+                500
+            );
+        }
+
+        // validate participant
+        //if ($participant) { }
     }
 
     /**

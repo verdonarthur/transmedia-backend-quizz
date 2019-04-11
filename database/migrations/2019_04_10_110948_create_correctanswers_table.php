@@ -15,7 +15,7 @@ class CreateCorrectanswersTable extends Migration
     {
         Schema::create('correctanswers', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->integer('idQuestion');
+            $table->integer('idQuestion')->unique();
             $table->string('correctHash');
             $table->timestamps();
             $table->softDeletes();

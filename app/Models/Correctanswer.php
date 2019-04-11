@@ -22,5 +22,15 @@ class Correctanswer extends Model
     protected $hidden = [        
     ];
 
+    /**
+     * 
+     */
+    public function checkAnswer(Answer $answer){
+        return $this->correctHashAnswer === $answer->hashAnswer;
+    }
+
+    public static function findByIdQuestion($idQuestion){
+        return self::where('idQuestion',$idQuestion)->get();
+    }
 
 }
