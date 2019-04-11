@@ -13,10 +13,10 @@ class AnswersTableSeeder extends Seeder
      */
     public function run()
     {
-        $klark = Participant::find(1);
-        $answerUser1 = new Answer(['idQuestion'=>1,'hashAnswer'=>'asldjhaskjfh']);
-        $answerUser1->participant()->associate($klark);
-        $answerUser1->save();
+        //$klark = Participant::find(1);
+        //$answerUser1 = new Answer(['idQuestion'=>1,'hashAnswer'=>'asldjhaskjfh']);
+        //$answerUser1->participant()->associate($klark);
+        //$answerUser1->save();
         
     }
 }
