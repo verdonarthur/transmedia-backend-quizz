@@ -31,7 +31,6 @@ class ParticipantCtrl extends BaseController
      */
     public function save()
     {
-
         $validator = Participant::validate($this->request->all());
         if ($validator->fails()) {
             return response()->json(

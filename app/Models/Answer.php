@@ -37,6 +37,11 @@ class Answer extends Model
     public function check()
     {
         $correctAnswer = Correctanswer::findByIdQuestion($this->idQuestion);
+        
+        if ($correctAnswer->isEmpty()) {
+            return false;
+        }
+
         return $correctAnswer->correctHashAnswer === $this->hashAnswer;
     }
 

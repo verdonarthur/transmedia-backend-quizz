@@ -15,7 +15,7 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id')->unique();
-            $table->integer('idQuestion')->unique();
+            $table->integer('idQuestion');
             $table->string('hashAnswer');
             $table->timestamps();
             $table->integer('idParticipant');

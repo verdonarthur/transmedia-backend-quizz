@@ -67,10 +67,10 @@ class Participant extends Model
         foreach ($answers as $answer) {
             if (Answer::validate($answer)->passes()) {
                 $answerToSave = new Answer($answer);
-                $answerToSave->associate($this);
+                $answerToSave->participant()->associate($this);
                 $answerToSave->save();
 
-                if ($answer->check()) {
+                if ($answerToSave->check()) {
                     $this->nbrCorrectAnswer++;
                 }
             }
