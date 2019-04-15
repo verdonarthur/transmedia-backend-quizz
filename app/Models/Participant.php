@@ -41,7 +41,7 @@ class Participant extends Model
         return Validator::make($data, [
             'name' => 'required | string',
             'surname' => 'required | string',
-            'birthdate' => 'required | date_format:d-m-Y',
+            'birthdate' => 'required | date_format:Y-m-d',
             'street' => 'required | string',
             'npa' => 'required | integer',
             'email' => 'required | email',
