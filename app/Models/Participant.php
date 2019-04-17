@@ -76,6 +76,8 @@ class Participant extends Model
             }
         }
         
+        $this->isAllAnswerCorrect = env('TOTAL_NUMBER_QUESTION') === $this->nbrCorrectAnswer;
+
         $this->save();
     }
 
