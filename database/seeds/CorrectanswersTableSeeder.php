@@ -18,7 +18,7 @@ class CorrectanswersTableSeeder extends Seeder
             'daa607707d1fe35772d5d37e08cae9e75ec61b47',
             'bc124a6a8b165d27282d5d25a45ed5d2dd0add94',
             '548f493f7601b9923fc4bd9ce1af2e8d04c1f340',
-            'df82de49db4b352799887f0044d58820e5adcd0b'
+            'e4d10d0da55180dbf172b636223851b04f4bcb1c'
         ];
 
         for ($i = 1; $i <= 6; $i++) { 

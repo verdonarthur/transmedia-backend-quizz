@@ -38,11 +38,11 @@ class Answer extends Model
     {
         $correctAnswer = Correctanswer::findByIdQuestion($this->idQuestion);
         
-        if ($correctAnswer->isEmpty()) {
+        if (is_null($correctAnswer)) {
             return false;
         }
 
-        return $correctAnswer->correctHashAnswer === $this->hashAnswer;
+        return $correctAnswer->correctHash === $this->hashAnswer;
     }
 
     public static function validate($data)

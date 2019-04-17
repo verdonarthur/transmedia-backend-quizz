@@ -11,7 +11,7 @@ class Correctanswer extends Model
      * @var array
      */
     protected $fillable = [
-        'idQuestion','correctHashAnswer'
+        'idQuestion','correctHash'
     ];
 
     /**
@@ -26,11 +26,11 @@ class Correctanswer extends Model
      * 
      */
     public function checkAnswer(Answer $answer){
-        return $this->correctHashAnswer === $answer->hashAnswer;
+        return $this->correctHash === $answer->hashAnswer;
     }
 
     public static function findByIdQuestion($idQuestion){
-        return self::where('idQuestion',$idQuestion)->get();
+        return self::where('idQuestion',$idQuestion)->first();
     }
 
 }
