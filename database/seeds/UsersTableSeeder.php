@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
     {
         $admin = new User();
         $admin->login = "birdlife_admin";
-        $admin->password = password_hash('admin', PASSWORD_BCRYPT);
+        $admin->password = password_hash('^zQry9BPWCD5qs', PASSWORD_BCRYPT);
         $admin->save();
     }
 }
