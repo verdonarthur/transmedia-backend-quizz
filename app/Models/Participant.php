@@ -57,7 +57,7 @@ class Participant extends Model
     public function checkAnswers($answers)
     {
 
-        if ($this->isAllAnswerCorrect = $this->hashAnswers === env('HASH_ANSWERS')) {
+        if ($this->isAllAnswerCorrect = $this->hashAnswers == env('HASH_ANSWERS')) {
             $this->nbrCorrectAnswer = env('TOTAL_NUMBER_QUESTION');
             return;
         }
@@ -76,7 +76,7 @@ class Participant extends Model
             }
         }
         
-        $this->isAllAnswerCorrect = env('TOTAL_NUMBER_QUESTION') === $this->nbrCorrectAnswer;
+        $this->isAllAnswerCorrect = env('TOTAL_NUMBER_QUESTION') == $this->nbrCorrectAnswer;
 
         $this->save();
     }
